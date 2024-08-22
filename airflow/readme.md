@@ -59,7 +59,6 @@ with DAG(
                 'attachments': [file_template.format(mo_=mo_)],
                 'subject': SUBJECT.format(date=date_.strftime('%d.%m.%Y')),
                 'body_text': BODY.format(date=date_.strftime('%d.%m.%Y')),
-                # 'emails': ['kulikovdy@zdrav.mos.ru']
                 'emails': [Email.get_mo_mail(mo_name=mo_)],
             }
             for mo_ in MO_LIST
