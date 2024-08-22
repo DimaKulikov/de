@@ -158,6 +158,7 @@ FROM CORE.AVAILABLE_RESOURCE_SUPP_UPDATES(current_filename=2022052510)
 ```
 
 4. Второй запрос для обновления строк с данными, которые устарели. В запросе в двух местах подставляется дата файла в формате YYYYMMDDHH. Используем настройку mutations_sync = 1, чтобы процесс дожидался завершения обновления (мутации в ClickHouse) и таск в airflow не завершался до завершения обновления.
+```sql
 ALTER TABLE 
 CORE.AVAILABLE_RESOURCE_SUPP 
 UPDATE VALID_TO = parseDateTime(toString(2022052512),'%Y%m%d%H', 'Europe/Moscow') - INTERVAL 1 SECOND
@@ -168,3 +169,4 @@ WHERE AVAILABLE_RES_ID || toString(FINGERPRINT) IN
 )
 SETTINGS
 mutations_sync = 1
+```
