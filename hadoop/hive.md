@@ -2,7 +2,7 @@
 https://cwiki.apache.org/confluence/display/Hive/LanguageManual
 
 # простая практика
-Тот же подсчёт среднего значения чаевых в такси, который делал на класическом map-reduce через [hadoop-streaming и python](./hadoop-streaming.md), только теперь на hive, что позволяет решить задачу напного проще и эффективнее. Данные также считываются из s3 бакета
+Тот же подсчёт среднего значения чаевых в такси, который [делал](./hadoop-streaming.md) на классическом map-reduce через hadoop-streaming и python, только теперь на hive, что позволяет решить задачу намного проще и эффективнее. Данные также считываются из s3 бакета
 1. создаю внешнюю таблицу которая смотрит в csv в s3. описание данных отсюда - https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf
 2. чтобы заголовки не читались как строки у таблицы задаю свойство "skip.header.line.count"="1". долго искал, жаль что это не задокументировано https://issues.apache.org/jira/browse/HIVE-5795
 ```sql
