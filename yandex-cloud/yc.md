@@ -1,3 +1,7 @@
+# yc cli
+[документация](https://yandex.cloud/ru/docs/cli/quickstart)
+
+
 # s3 object storage
 ## aws-cli
 создать профиль или изменить дефолтный в ~/.aws/config или командой
