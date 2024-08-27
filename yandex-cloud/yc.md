@@ -6,12 +6,12 @@
 ## aws-cli
 создать профиль или изменить дефолтный в ~/.aws/config или командой
 aws configure
-
+```
 [default]
 region = ru-central1
 endpoint_url = https://storage.yandexcloud.net/
 output = json
-
+```
 Не во всех версиях aws-cli поддерживается endpoint_url из профиля. Можно указывать каждый раз агрументом, или добавить алиас
 aws s3 --endpoint-url=https://storage.yandexcloud.net ...
 ## профили
